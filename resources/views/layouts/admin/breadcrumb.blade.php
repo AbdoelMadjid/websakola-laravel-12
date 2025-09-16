@@ -13,7 +13,7 @@
                 <li class="breadcrumb-item active">@yield('title')</li>
             </ol>
             <div class="page-title-right">
-                {{-- {!! renderDate() !!} --}}
+                {!! renderDate() !!}
             </div>
         </div>
     </div>
