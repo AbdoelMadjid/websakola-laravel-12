@@ -16,7 +16,7 @@
                     </span>
                     <input id="email"
                         class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
-                        name="email" :value="old('email')" required autofocus autocomplete="username" type="email">
+                        name="email" value="superadmin@example.com" required autofocus autocomplete="username" type="email">
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     </span>
                     <input id="password"
                         class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
-                        name="password" required autocomplete="current-password" type="password">
+                        name="password" required autocomplete="current-password" value="password" type="password">
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
             </div>
