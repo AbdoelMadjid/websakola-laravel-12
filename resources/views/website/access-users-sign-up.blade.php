@@ -24,10 +24,12 @@
                         class="input-group-addon g-width-50 g-brd-secondary-light-v2 g-bg-secondary g-rounded-right-0">
                         <i class="icon-education-166 u-line-icon-pro"></i>
                     </span>
-                    <input
+                    <input id="emailInput"
                         class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
-                        type="email">
+                        type="email" placeholder="Masukkan email">
                 </div>
+                {{-- Tempat pesan error --}}
+                <small id="emailError" class="text-danger d-none">Format email tidak valid</small>
             </div>
 
             <div class="g-mb-20">
@@ -37,9 +39,15 @@
                         class="input-group-addon g-width-50 g-brd-secondary-light-v2 g-bg-secondary g-rounded-right-0">
                         <i class="icon-finance-135 u-line-icon-pro"></i>
                     </span>
-                    <input
-                        class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
+                    <input id="passwordInput"
+                        class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-px-20 g-py-12"
                         type="password">
+
+                    {{-- Icon Show/Hide --}}
+                    <span class="input-group-addon g-bg-secondary g-brd-secondary-light-v2 cursor-pointer"
+                        id="togglePasswordBtn">
+                        <i class="fa fa-eye" id="passwordIcon"></i>
+                    </span>
                 </div>
             </div>
 
@@ -50,10 +58,19 @@
                         class="input-group-addon g-width-50 g-brd-secondary-light-v2 g-bg-secondary g-rounded-right-0">
                         <i class="icon-real-estate-056 u-line-icon-pro"></i>
                     </span>
-                    <input
-                        class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
+                    <input id="confirmPasswordInput"
+                        class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-px-20 g-py-12"
                         type="password">
+
+                    {{-- Icon Show/Hide --}}
+                    <span class="input-group-addon g-bg-secondary g-brd-secondary-light-v2 cursor-pointer"
+                        id="toggleConfirmBtn">
+                        <i class="fa fa-eye" id="confirmPasswordIcon"></i>
+                    </span>
                 </div>
+
+                {{-- Tempat pesan error --}}
+                <small id="passwordError" class="text-danger d-none">Password dan Confirm Password tidak sama</small>
             </div>
 
             <div class="d-flex">
@@ -69,3 +86,62 @@
     </div>
     <!-- End Signup -->
 </form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // === Validasi Email ===
+        const emailInput = document.getElementById('emailInput');
+        const emailError = document.getElementById('emailError');
+
+        emailInput.addEventListener('input', function() {
+            const emailValue = emailInput.value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailValue === '' || emailPattern.test(emailValue)) {
+                emailError.classList.add('d-none');
+            } else {
+                emailError.classList.remove('d-none');
+            }
+        });
+
+        // === Toggle Password & Confirm Password ===
+        function setupToggle(inputId, toggleId, iconId) {
+            const input = document.getElementById(inputId);
+            const toggle = document.getElementById(toggleId);
+            const icon = document.getElementById(iconId);
+
+            if (!input || !toggle || !icon) return;
+
+            toggle.addEventListener('click', function () {
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            });
+        }
+
+        setupToggle('passwordInput', 'togglePasswordBtn', 'passwordIcon');
+        setupToggle('confirmPasswordInput', 'toggleConfirmBtn', 'confirmPasswordIcon');
+
+        // === Validasi Password & Confirm Password ===
+        const passwordInput = document.getElementById('passwordInput');
+        const confirmPasswordInput = document.getElementById('confirmPasswordInput');
+        const passwordError = document.getElementById('passwordError');
+
+        function validatePasswordMatch() {
+            if (confirmPasswordInput.value === '') {
+                passwordError.classList.add('d-none');
+                return;
+            }
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                passwordError.classList.remove('d-none'); // tampilkan error
+            } else {
+                passwordError.classList.add('d-none'); // sembunyikan error
+            }
+        }
+
+        passwordInput.addEventListener('input', validatePasswordMatch);
+        confirmPasswordInput.addEventListener('input', validatePasswordMatch);
+    });
+</script>
