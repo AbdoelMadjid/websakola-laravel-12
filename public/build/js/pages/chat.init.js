@@ -950,7 +950,7 @@ function searchMessages() {
     searchFilter = searchInput.value.toUpperCase();
     searchUL = document.getElementById("users-conversation");
     searchLI = searchUL.getElementsByTagName("li");
-    Array.from(searchLI).forEach(function (search) {
+    searchLI.forEach(function (search) {
         a = search.getElementsByTagName("p")[0] ? search.getElementsByTagName("p")[0] : '';
         txtValue = a.textContent || a.innerText ? a.textContent || a.innerText : '';
         if (txtValue.toUpperCase().indexOf(searchFilter) > -1) {

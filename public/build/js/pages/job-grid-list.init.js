@@ -130,9 +130,9 @@ function loadJobListData(datas, page) {
     });
 
     if(datas.length > 0){
-        (document.getElementById("job-widget")) ? document.getElementById("job-widget").style.display = "block" : "";
+        document.getElementById("job-widget").style.display = "block";
     }else{
-        (document.getElementById("job-widget")) ? document.getElementById("job-widget").style.display = "none" : "";
+        document.getElementById("job-widget").style.display = "none";
     }
 
     currentPage == 1 ? prevButton.parentNode.classList.add('disabled') : prevButton.parentNode.classList.remove('disabled');
