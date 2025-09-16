@@ -470,7 +470,7 @@
         data-bs-toggle="collapse" role="button" aria-expanded="{{ Request::is('layouts_*') ? 'true' : 'false' }}"
         aria-controls="sidebarLayouts">
         <i class="ri-layout-3-line"></i> <span>@lang('translation.layouts')</span><span
-            class="badge badge-pill bg-danger">@lang('translation.hot')</span>
+            class="badge badge-pill bg-danger me-3">@lang('translation.hot')</span>
     </a>
     <div class="collapse menu-dropdown {{ Request::is('layouts_*') ? 'show' : '' }}" id="sidebarLayouts">
         <ul class="nav nav-sm flex-column">

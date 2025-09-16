@@ -101,7 +101,7 @@
                     <li class="nav-item">
                         <a href="/ui_links"
                             class="nav-link {{ Request::is('ui_links') ? 'active' : '' }}"><span>@lang('translation.links')</span>
-                            <span class="badge badge-pill bg-success">@lang('translation.new')</span></a>
+                            <span class="badge badge-pill bg-success me-4">@lang('translation.new')</span></a>
                     </li>
                     <li class="nav-item">
                         <a href="/ui_general"
@@ -486,3 +486,4 @@
         </ul>
     </div>
 </li>
+

@@ -37,9 +37,29 @@
                         <i class="ri-home-wifi-line"></i> <span>@lang('translation.dashboards')</span>
                     </a>
                 </li>
-                @include('layouts.admin.menutemplate.menu')
+
+                <li class="menu-title"><span>@lang('translation.menu')</span></li>
+                @php $smenu = config('sidebar_menu'); @endphp
+                @foreach ($smenu as $menuKey => $menu)
+                    @include('layouts.admin.menutemplate._menu_block', ['menu' => $menu])
+                @endforeach
+
+                <li class="menu-title"><i class="ri-more-fill"></i> <span>@lang('translation.pages')</span></li>
+                @php $pages = config('sidebar_pages'); @endphp
+                @foreach ($pages as $menuKey => $menu)
+                    @include('layouts.admin.menutemplate._menu_block', ['menu' => $menu])
+                @endforeach
+
+                <li class="menu-title"><i class="ri-more-fill"></i> <span>@lang('translation.components')</span></li>
+
+                @php $components = config('sidebar_component'); @endphp
+                @foreach ($components as $menuKey => $menu)
+                    @include('layouts.admin.menutemplate._menu_block', ['menu' => $menu])
+                @endforeach
+
+                {{-- @include('layouts.admin.menutemplate.menu')
                 @include('layouts.admin.menutemplate.page')
-                @include('layouts.admin.menutemplate.component')
+                @include('layouts.admin.menutemplate.component') --}}
             </ul>
         </div>
         <!-- Sidebar -->

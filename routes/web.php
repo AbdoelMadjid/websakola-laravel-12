@@ -24,8 +24,48 @@ Route::middleware('auth')->group(function () {
     })->name('lang.switch');
 });
 
+// gabungkan semua config
+$menus = array_merge(
+    config('sidebar_menus', []),
+    config('sidebar_pages', []),
+    config('sidebar_component', [])
+);
 
+Route::group(['middleware' => ['auth']], function () use ($menus) {
+
+    $createRoutes = function ($items) use (&$createRoutes) {
+        foreach ($items as $item) {
+
+            if (isset($item['folder'], $item['route'])) {
+                $folder = $item['folder'];
+
+                // convert route name underscore -> view file dash
+                $pageFile = str_replace('_', '-', $item['route']);
+
+                $routeName = $item['route'];
+
+                Route::get("/{$folder}/{$pageFile}", function () use ($folder, $pageFile) {
+                    $viewPath = "template.{$folder}.{$pageFile}";
+                    if (!view()->exists($viewPath)) {
+                        abort(404, "Halaman {$folder}/{$pageFile} tidak ditemukan!");
+                    }
+                    return view($viewPath, compact('folder', 'pageFile'));
+                })->name($routeName);
+            }
+
+            // loop rekursif child menu
+            if (!empty($item['items'])) {
+                $createRoutes($item['items']);
+            } elseif (!empty($item['children'])) {
+                $createRoutes($item['children']);
+            }
+        }
+    };
+
+    $createRoutes($menus);
+});
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/website.php';
-require __DIR__ . '/template.php';
+/* require __DIR__ . '/template.php';
+ */
