@@ -62,7 +62,7 @@
         <div class="collapse menu-dropdown {{ $isActive ? 'show' : '' }}" id="{{ $menu['collapse_id'] }}">
             <ul class="nav nav-sm flex-column">
                 @foreach($submenu as $sub)
-                    @include('layouts.admin.menutemplate._menu_block', [
+                    @include('layouts.admin.sidebar-block', [
                         'menu' => $sub
                     ])
                 @endforeach

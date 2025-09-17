@@ -2,9 +2,9 @@
 
 return [
 
-    'authentication' => [
+    'auth' => [
         'icon' => 'ri-account-circle-line',
-        'prefix' => 'auth_*',
+        'prefix' => 'auth-*',
         'collapse_id' => 'sidebarAuth',
         'translation' => 'translation.authentication',
         'items' => [
@@ -13,10 +13,10 @@ return [
             [
                 'translation' => 'translation.signin',
                 'collapse_id' => 'sidebarSignIn',
-                'prefix' => 'auth_signin_*',
+                'prefix' => 'auth-signin-*',
                 'children' => [
-                    ['route' => 'auth_signin_basic', 'label' => 'translation.basic', 'target' => '_blank'],
-                    ['route' => 'auth_signin_cover', 'label' => 'translation.cover', 'target' => '_blank'],
+                    ['route' => 'auth-signin-basic', 'label' => 'translation.basic', 'target' => '_blank'],
+                    ['route' => 'auth-signin-cover', 'label' => 'translation.cover', 'target' => '_blank'],
                 ],
             ],
 
@@ -24,10 +24,10 @@ return [
             [
                 'translation' => 'translation.signup',
                 'collapse_id' => 'sidebarSignUp',
-                'prefix' => 'auth_signup_*',
+                'prefix' => 'auth-signup-*',
                 'children' => [
-                    ['route' => 'auth_signup_basic', 'label' => 'translation.basic', 'target' => '_blank'],
-                    ['route' => 'auth_signup_cover', 'label' => 'translation.cover', 'target' => '_blank'],
+                    ['route' => 'auth-signup-basic', 'label' => 'translation.basic', 'target' => '_blank'],
+                    ['route' => 'auth-signup-cover', 'label' => 'translation.cover', 'target' => '_blank'],
                 ],
             ],
 
@@ -35,10 +35,10 @@ return [
             [
                 'translation' => 'translation.password-reset',
                 'collapse_id' => 'sidebarResetPass',
-                'prefix' => 'auth_pass_reset_*',
+                'prefix' => 'auth-pass-reset-*',
                 'children' => [
-                    ['route' => 'auth_pass_reset_basic', 'label' => 'translation.basic', 'target' => '_blank'],
-                    ['route' => 'auth_pass_reset_cover', 'label' => 'translation.cover', 'target' => '_blank'],
+                    ['route' => 'auth-pass-reset-basic', 'label' => 'translation.basic', 'target' => '_blank'],
+                    ['route' => 'auth-pass-reset-cover', 'label' => 'translation.cover', 'target' => '_blank'],
                 ],
             ],
 
@@ -46,10 +46,10 @@ return [
             [
                 'translation' => 'translation.password-create',
                 'collapse_id' => 'sidebarchangePass',
-                'prefix' => 'auth_pass_change_*',
+                'prefix' => 'auth-pass-change-*',
                 'children' => [
-                    ['route' => 'auth_pass_change_basic', 'label' => 'translation.basic', 'target' => '_blank'],
-                    ['route' => 'auth_pass_change_cover', 'label' => 'translation.cover', 'target' => '_blank'],
+                    ['route' => 'auth-pass-change-basic', 'label' => 'translation.basic', 'target' => '_blank'],
+                    ['route' => 'auth-pass-change-cover', 'label' => 'translation.cover', 'target' => '_blank'],
                 ],
             ],
 
@@ -57,10 +57,10 @@ return [
             [
                 'translation' => 'translation.lock-screen',
                 'collapse_id' => 'sidebarLockScreen',
-                'prefix' => 'auth_lockscreen_*',
+                'prefix' => 'auth-lockscreen-*',
                 'children' => [
-                    ['route' => 'auth_lockscreen_basic', 'label' => 'translation.basic', 'target' => '_blank'],
-                    ['route' => 'auth_lockscreen_cover', 'label' => 'translation.cover', 'target' => '_blank'],
+                    ['route' => 'auth-lockscreen-basic', 'label' => 'translation.basic', 'target' => '_blank'],
+                    ['route' => 'auth-lockscreen-cover', 'label' => 'translation.cover', 'target' => '_blank'],
                 ],
             ],
 
@@ -68,10 +68,10 @@ return [
             [
                 'translation' => 'translation.logout',
                 'collapse_id' => 'sidebarLogout',
-                'prefix' => 'auth_logout_*',
+                'prefix' => 'auth-logout-*',
                 'children' => [
-                    ['route' => 'auth_logout_basic', 'label' => 'translation.basic', 'target' => '_blank'],
-                    ['route' => 'auth_logout_cover', 'label' => 'translation.cover', 'target' => '_blank'],
+                    ['route' => 'auth-logout-basic', 'label' => 'translation.basic', 'target' => '_blank'],
+                    ['route' => 'auth-logout-cover', 'label' => 'translation.cover', 'target' => '_blank'],
                 ],
             ],
 
@@ -79,10 +79,10 @@ return [
             [
                 'translation' => 'translation.success-message',
                 'collapse_id' => 'sidebarSuccessMsg',
-                'prefix' => 'auth_success_msg_*',
+                'prefix' => 'auth-success-msg-*',
                 'children' => [
-                    ['route' => 'auth_success_msg_basic', 'label' => 'translation.basic', 'target' => '_blank'],
-                    ['route' => 'auth_success_msg_cover', 'label' => 'translation.cover', 'target' => '_blank'],
+                    ['route' => 'auth-success-msg-basic', 'label' => 'translation.basic', 'target' => '_blank'],
+                    ['route' => 'auth-success-msg-cover', 'label' => 'translation.cover', 'target' => '_blank'],
                 ],
             ],
 
@@ -90,10 +90,10 @@ return [
             [
                 'translation' => 'translation.two-step-verification',
                 'collapse_id' => 'sidebarTwoStep',
-                'prefix' => 'auth_twostep_*',
+                'prefix' => 'auth-twostep-*',
                 'children' => [
-                    ['route' => 'auth_twostep_basic', 'label' => 'translation.basic', 'target' => '_blank'],
-                    ['route' => 'auth_twostep_cover', 'label' => 'translation.cover', 'target' => '_blank'],
+                    ['route' => 'auth-twostep-basic', 'label' => 'translation.basic', 'target' => '_blank'],
+                    ['route' => 'auth-twostep-cover', 'label' => 'translation.cover', 'target' => '_blank'],
                 ],
             ],
 
@@ -101,61 +101,61 @@ return [
             [
                 'translation' => 'translation.errors',
                 'collapse_id' => 'sidebarErrors',
-                'prefix' => 'auth_error_*',
+                'prefix' => 'auth-error-*',
                 'children' => [
-                    ['route' => 'auth_error_404_basic', 'label' => 'translation.404-basic', 'target' => '_blank'],
-                    ['route' => 'auth_error_404_cover', 'label' => 'translation.404-cover', 'target' => '_blank'],
-                    ['route' => 'auth_error_404_alt',   'label' => 'translation.404-alt',   'target' => '_blank'],
-                    ['route' => 'auth_error_500',       'label' => 'translation.500',       'target' => '_blank'],
-                    ['route' => 'auth_error_offline',   'label' => 'translation.offline-page', 'target' => '_blank'],
+                    ['route' => 'auth-error-404-basic', 'label' => 'translation.404-basic', 'target' => '_blank'],
+                    ['route' => 'auth-error-404-cover', 'label' => 'translation.404-cover', 'target' => '_blank'],
+                    ['route' => 'auth-error-404-alt',   'label' => 'translation.404-alt',   'target' => '_blank'],
+                    ['route' => 'auth-error-500',       'label' => 'translation.500',       'target' => '_blank'],
+                    ['route' => 'auth-error-offline',   'label' => 'translation.offline-page', 'target' => '_blank'],
                 ],
             ],
         ],
     ],
 
-    'pages' => [
+    'page' => [
         'icon' => 'ri-pages-line',
-        'prefix' => 'pages_*',
+        'prefix' => 'pages-*',
         'collapse_id' => 'sidebarPages',
         'translation' => 'translation.pages',
         'items' => [
 
-            ['route' => 'pages_starter', 'label' => 'translation.starter'],
+            ['route' => 'pages-starter', 'label' => 'translation.starter'],
 
             [
-                'prefix' => 'pages_profile_*',
+                'prefix' => 'pages-profile-*',
                 'collapse_id' => 'sidebarProfile',
                 'label' => 'translation.profile',
                 'children' => [
-                    ['route' => 'pages_profile_basic', 'label' => 'translation.simple-page'],
-                    ['route' => 'pages_profile_settings', 'label' => 'translation.settings'],
+                    ['route' => 'pages-profile-basic', 'label' => 'translation.simple-page'],
+                    ['route' => 'pages-profile-settings', 'label' => 'translation.settings'],
                 ],
             ],
 
-            ['route' => 'pages_team', 'label' => 'translation.team'],
-            ['route' => 'pages_timeline', 'label' => 'translation.timeline'],
-            ['route' => 'pages_faqs', 'label' => 'translation.faqs'],
-            ['route' => 'pages_pricing', 'label' => 'translation.pricing'],
-            ['route' => 'pages_gallery', 'label' => 'translation.gallery'],
-            ['route' => 'pages_maintenance', 'label' => 'translation.maintenance'],
-            ['route' => 'pages_coming_soon', 'label' => 'translation.coming-soon'],
-            ['route' => 'pages_sitemap', 'label' => 'translation.sitemap'],
-            ['route' => 'pages_search_results', 'label' => 'translation.search-results'],
-            ['route' => 'pages_privacy_policy', 'label' => 'translation.privacy-policy'],
-            ['route' => 'pages_term_conditions', 'label' => 'translation.term-conditions'],
+            ['route' => 'pages-team', 'label' => 'translation.team'],
+            ['route' => 'pages-timeline', 'label' => 'translation.timeline'],
+            ['route' => 'pages-faqs', 'label' => 'translation.faqs'],
+            ['route' => 'pages-pricing', 'label' => 'translation.pricing'],
+            ['route' => 'pages-gallery', 'label' => 'translation.gallery'],
+            ['route' => 'pages-maintenance', 'label' => 'translation.maintenance', 'target' => '_blank'],
+            ['route' => 'pages-coming-soon', 'label' => 'translation.coming-soon', 'target' => '_blank'],
+            ['route' => 'pages-sitemap', 'label' => 'translation.sitemap'],
+            ['route' => 'pages-search-results', 'label' => 'translation.search-results'],
+            ['route' => 'pages-privacy-policy', 'label' => 'translation.privacy-policy'],
+            ['route' => 'pages-term-conditions', 'label' => 'translation.term-conditions'],
 
         ],
     ],
 
     'landing' => [
         'icon' => 'ri-rocket-line',
-        'prefix' => 'landing_*',
+        'prefix' => 'landing-*',
         'collapse_id' => 'sidebarLanding',
         'translation' => 'translation.landing',
         'items' => [
-            ['route' => 'landing_basic', 'label' => 'translation.one-page', 'target' => '_self'],
-            ['route' => 'landing_nft', 'label' => 'translation.nft-landing', 'target' => '_self'],
-            ['route' => 'landing_job', 'label' => 'translation.job', 'target' => '_self'],
+            ['route' => 'landing-basic', 'label' => 'translation.one-page', 'target' => '_blank'],
+            ['route' => 'landing-nft', 'label' => 'translation.nft-landing', 'target' => '_blank'],
+            ['route' => 'landing-job', 'label' => 'translation.job', 'target' => '_blank'],
         ],
     ],
 
